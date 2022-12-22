@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model Box</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("./5-cool-online-gradient-generators-the-ultimate-list.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .model {
+      height: 20rem;
+      background-color: white;
+      width: 40rem;
+
+      border-radius: 2rem;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .btn {
+      width: 8rem;
+      height: 2rem;
+      font-size: 1rem;
+      text-align: center;
+      background-color: rgb(93, 161, 238);
+      border-radius: 0.5rem;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      transition: all linear 0.2s;
+    }
+
+    .heading {
+      font-size: 3rem;
+      color: transparent;
+      -webkit-text-stroke: 2px gray;
+    }
+
+    .model-box1 {
+      visibility: hidden;
+      z-index: -10;
+    }
+
+    .model-box {
+      position: absolute;
+      height: 30rem;
+      background-color: black;
+      background-color: white;
+     width: 50rem;
+      transition: all linear 0.2s;
+      animation: Hk 0.2s linear alternate;
+      border-radius: 2rem;
+    }
+    @keyframes Hk {
+      0% {
+        transform: translateY(0px);
+      }
+      10% {
+        transform: translateY(1rem);
+      }
+    }
+    .btn1 {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 100%;
+      text-align: center;
+      border: none;
+      background-image: url(./5-cool-online-gradient-generators-the-ultimate-list.png);
+      float: right;
+      cursor: pointer;
+      position: relative;
+      bottom: 8px;
+      left: 8px;
+      color: white;
+    }
+    .inside-text {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+  </style>
+
+  <body>
+    <main>
+      <div class="model">
+        <h1 class="heading">Open Project model</h1>
+        <button class="btn">Open Model</button>
+      </div>
+    </main>
+    <div class="model-box1">
+      <button class="btn1">X</button>
+      <div class="inside-text">
+        <h1>Hey, i am HItesh frontend developer</h1>
+      </div>
+    </div>
+    <script>
+      document.querySelector(".btn").addEventListener("click", function () {
+        let box = document.querySelector(".model-box1");
+        box.classList.toggle("model-box")
+          ? box.classList.remove("model-box1")
+          : box.classList.add("model-box1");
+      });
+      document.querySelector(".btn1").addEventListener("click", function () {
+        let box = document.querySelector(".model-box");
+        box.classList.toggle("model-box1");
+        box.classList.remove("model-box");
+      });
+    </script>
+  </body>
+</html>
